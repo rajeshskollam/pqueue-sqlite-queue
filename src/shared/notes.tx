@@ -1,0 +1,29 @@
+# Use AWS Glue Schema Registry Avro converter for both key and value
+key.converter=com.amazonaws.services.schemaregistry.kafkaconnect.AWSKafkaAvroConverter
+value.converter=com.amazonaws.services.schemaregistry.kafkaconnect.AWSKafkaAvroConverter
+
+# Glue region (example ap-south-1 for Mumbai)
+key.converter.region=ap-south-1
+value.converter.region=ap-south-1
+
+# Registry name (optional — if you want to use a specific registry)
+key.converter.registry.name=your-registry-name
+value.converter.registry.name=your-registry-name
+
+# Enable auto-registration (true/false)
+key.converter.schemaAutoRegistrationEnabled=true
+value.converter.schemaAutoRegistrationEnabled=true
+
+# Avro record type — GENERIC_RECORD or SPECIFIC_RECORD (Debezium -> GENERIC_RECORD is common)
+key.converter.avroRecordType=GENERIC_RECORD
+value.converter.avroRecordType=GENERIC_RECORD
+
+# Optionally specify schema name templates or explicit names
+# key.converter.schemaName=KeySchema
+# value.converter.schemaName=ValueSchema
+
+# If you need to assume a role before calling Glue (cross-account)
+# key.converter.assumeRoleArn=arn:aws:iam::123456789012:role/RoleToAssume
+# key.converter.assumeRoleSessionName=msk-connect-session
+# value.converter.assumeRoleArn=arn:aws:iam::123456789012:role/RoleToAssume
+# value.converter.assumeRoleSessionName=msk-connect-session
